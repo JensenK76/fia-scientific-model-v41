@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the repository and the associated manuscript/preprint."
+title: "FIA Scientific Model V4.1: Null-Controlled Hob-Cohesion Testbench"
+authors:
+  - family-names: "Jensen"
+    given-names: "Kenneth Højsgaard"
+year: 2026
+version: "4.1"
+type: software
+license: MIT
+abstract: "Python testbench for FIA-inspired mass-diverse relational networks with null-controlled hob-cohesion diagnostics, factorial diversity-channel decomposition, persistence tracking, and paired inference."
