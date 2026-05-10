@@ -289,3 +289,96 @@ Jensen, K. H. FIA Scientific Model V4.1: Null-Controlled Hob-Cohesion Testbench 
 ## License
 
 This repository is released under the MIT License unless stated otherwise. See `LICENSE`.
+# FIA Scientific Model V4.1
+
+Null-controlled Python testbench for FIA-inspired mass-diverse relational networks.
+
+## Purpose
+
+This repository implements FIA Scientific Model V4.1, a computational testbench for testing whether mass-diverse relational networks produce persistent, phase-coherent, stiffness-cohesive hobs beyond relevant null controls.
+
+The model is intended as a pre-Maxwell hob-cohesion testbench. It does not claim to prove FIA as a physical theory or derive electromagnetism.
+
+## Scientific question
+
+Does the full FIA-inspired model outperform relevant null controls on persistent spectral cohesion?
+
+The preregistered primary endpoint is:
+
+C_metric_full = lambda_2(L_W_metric, M)
+
+where:
+
+W_metric_ij = (K / d_ref) A_ij max(cos(theta_i - theta_j), 0)
+
+## Model components
+
+The relation matrix is:
+
+A_ij = G0_ij exp(-beta |log(m_i / m_j)|)
+
+The model separates three diversity channels:
+
+1. kernel channel
+2. capacity channel
+3. omega channel
+
+## Controls
+
+The model includes:
+
+- equal_identical
+- beta0_full
+- kernel_only
+- capacity_only
+- omega_only
+- kernel_capacity
+- kernel_omega
+- capacity_omega
+- shuffle_kernel_fixed
+- shuffle_capacity_fixed
+- shuffle_omega_fixed
+- static_phase
+- random_graph_full
+- degree_preserving_rewire_full
+
+## How to run
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+Quick test:
+
+python fia_scientific_v41.py --quick --no-plots
+
+Targeted run:
+
+python fia_scientific_v41.py --targeted --no-plots
+
+Custom output folder:
+
+python fia_scientific_v41.py --targeted --out FIA_V41_output
+
+## Outputs
+
+The model writes CSV files including:
+
+- run results
+- time series
+- hob tracks
+- paired differences
+- factorial effects
+- threshold robustness
+- theory checks
+- decision report
+
+## Interpretation
+
+A strong FIA-hob claim requires the full model to outperform relevant null controls.
+
+If the full model does not outperform controls, the supported conclusion is more limited: mass-mismatch fragmentation may be present, but unique FIA-hob emergence is not established.
+
+## License
+
+MIT License.
